@@ -30,14 +30,14 @@ for version in $(/usr/sbin/phpquery -V); do
     for sapi in ${SAPIS}; do
 	conf_dir=${sapi%%:*}
 	proc_name=${sapi##*:}
-	if [ -e /etc/php/${version}/${conf_dir}/php.ini ]; then
+	if [ -e "/etc/php/${version}/${conf_dir}/php.ini" ] && [ -x "/usr/bin/php${version}" ]; then
 	    # Get all session variables once so we don't need to start PHP to get each config option
-	    session_config=$(PHP_INI_SCAN_DIR=/etc/php/${version}/${conf_dir}/conf.d/ php${version} -c /etc/php/${version}/${conf_dir}/php.ini -d "error_reporting='~E_ALL'" -r 'foreach(ini_get_all("session") as $k => $v) echo "$k=".$v["local_value"]."\n";')
+	    session_config=$(PHP_INI_SCAN_DIR=/etc/php/${version}/${conf_dir}/conf.d/ "/usr/bin/php${version}" -c "/etc/php/${version}/${conf_dir}/php.ini" -d "error_reporting='~E_ALL'" -r 'foreach(ini_get_all("session") as $k => $v) echo "$k=".$v["local_value"]."\n";')
 	    save_handler=$(echo "$session_config" | sed -ne 's/^session\.save_handler=\(.*\)$/\1/p')
 	    save_path=$(echo "$session_config" | sed -ne 's/^session\.save_path=\(.*;\)\?\(.*\)$/\2/p')
 	    gc_maxlifetime=$(($(echo "$session_config" | sed -ne 's/^session\.gc_maxlifetime=\(.*\)$/\1/p')/60))
 	    
-	    if [ "$save_handler" = "files" -a -d "$save_path" ]; then
+	    if [ "$save_handler" = "files" ] && [ -d "$save_path" ]; then
 		proc_names="$proc_names $(echo "$proc_name" | sed -e "s,@VERSION@,$version,")";
 		printf "%s:%s\n" "$save_path" "$gc_maxlifetime"
 	    fi

@@ -4,7 +4,6 @@ curl CURL
 enchant Enchant
 gd GD
 gmp GMP
-imap IMAP
 interbase Interbase
 intl Internationalisation
 json JSON
@@ -13,7 +12,6 @@ mbstring MBSTRING
 mysql MySQL
 odbc ODBC
 pgsql PostgreSQL
-pspell pspell
 readline readline
 snmp SNMP
 soap SOAP
@@ -21,5 +19,4 @@ sqlite3 SQLite3
 sybase Sybase
 tidy tidy
 xml DOM, SimpleXML, WDDX, XML, and XSL
-xmlrpc XMLRPC-EPI
 zip Zip
