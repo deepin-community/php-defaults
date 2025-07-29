@@ -1,8 +1,187 @@
-php-defaults (76) UNRELEASED; urgency=medium
+php-defaults (96) unstable; urgency=medium
 
-  * update
+  * Update the Conflicts with old extensions for PHP 8.4
 
- -- Debian PHP Maintainers <team+pkg-php@tracker.debian.org>  Wed, 08 Jun 2022 09:58:22 +0800
+ -- Ondřej Surý <ondrej@debian.org>  Wed, 04 Dec 2024 16:44:19 +0100
+
+php-defaults (95) unstable; urgency=medium
+
+  * Update Build-Depends to php-all-dev (>= 2:95~)
+  * Bump PHP in unstable to PHP 8.4
+
+ -- Ondřej Surý <ondrej@debian.org>  Mon, 02 Dec 2024 08:01:34 +0100
+
+php-defaults (95~exp3) experimental; urgency=medium
+
+  [ Helmut Grohne ]
+  * Install systemd units using dh helpers (again). (Closes: #1075854)
+
+ -- Ondřej Surý <ondrej@debian.org>  Sat, 06 Jul 2024 19:29:03 +0200
+
+php-defaults (95~exp2) experimental; urgency=medium
+
+  * Remove unbundled IMAP and pspell extensions
+
+ -- Ondřej Surý <ondrej@debian.org>  Sat, 06 Jul 2024 13:24:08 +0200
+
+php-defaults (95~exp1) experimental; urgency=medium
+
+  * Bump the default and supported version to PHP 8.4
+  * Change the branch to d/experimental
+
+ -- Ondřej Surý <ondrej@debian.org>  Sat, 06 Jul 2024 10:00:35 +0200
+
+php-defaults (94) unstable; urgency=medium
+
+  * Bump the default and support version to PHP 8.3
+
+ -- Ondřej Surý <ondrej@debian.org>  Tue, 09 Jan 2024 13:01:46 +0100
+
+php-defaults (93+nmu1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+
+  [ Helmut Grohne ]
+  * Install systemd units using dh helpers. (Closes: #1054089)
+
+ -- Chris Hofstaedtler <zeha@debian.org>  Thu, 30 May 2024 02:53:37 +0200
+
+php-defaults (93) unstable; urgency=medium
+
+  * Bump the default and supported version to PHP 8.2
+
+ -- Ondřej Surý <ondrej@debian.org>  Wed, 13 Jul 2022 10:19:37 +0200
+
+php-defaults (92) unstable; urgency=medium
+
+  * Update the list of the broken PECL modules with the PHP 8.1 upgrade
+
+ -- Ondřej Surý <ondrej@debian.org>  Tue, 11 Jan 2022 21:51:17 +0100
+
+php-defaults (91) unstable; urgency=medium
+
+  * Start the PHP 8.1 transition
+
+ -- Ondřej Surý <ondrej@debian.org>  Fri, 31 Dec 2021 12:16:23 +0100
+
+php-defaults (90) experimental; urgency=medium
+
+  * Actually regenerate d/control with the new default PHP version
+
+ -- Ondřej Surý <ondrej@debian.org>  Wed, 24 Nov 2021 17:18:11 +0100
+
+php-defaults (89) experimental; urgency=medium
+
+  * Bump the Debian version to PHP 8.1
+
+ -- Ondřej Surý <ondrej@debian.org>  Tue, 23 Nov 2021 11:54:47 +0100
+
+php-defaults (88) unstable; urgency=medium
+
+  [David Prévot]
+  * Ensure binary packages get a higher version for the revert
+  * Don’t depend on PHP 8.0 packages
+
+ -- Ondřej Surý <ondrej@debian.org>  Tue, 23 Nov 2021 11:48:13 +0100
+
+php-defaults (87) unstable; urgency=medium
+
+  * Revert "Start the transition to PHP 8.0"
+
+ -- Ondřej Surý <ondrej@debian.org>  Sat, 20 Nov 2021 08:20:12 +0100
+
+php-defaults (86) unstable; urgency=medium
+
+  * Revert "Bump the Debian version to PHP 8.1"
+
+ -- Ondřej Surý <ondrej@debian.org>  Fri, 19 Nov 2021 21:34:10 +0100
+
+php-defaults (85) unstable; urgency=medium
+
+  * Drop gettext from the list of the modules
+  * Fix the d/rules script break on empty PHP_BREAKS_PACKAGES
+  * Bump the Debian version to PHP 8.1
+
+ -- Ondřej Surý <ondrej@debian.org>  Thu, 04 Nov 2021 14:57:36 +0100
+
+php-defaults (84) unstable; urgency=medium
+
+  * No change version bump.
+
+ -- Ondřej Surý <ondrej@debian.org>  Mon, 21 Jun 2021 07:29:15 +0200
+
+php-defaults (83) unstable; urgency=medium
+
+  * Don't try to execute uninstalled php cli binaries to prevent session
+    files pile up
+
+ -- Ondřej Surý <ondrej@debian.org>  Mon, 21 Jun 2021 07:29:15 +0200
+
+php-defaults (82) unstable; urgency=medium
+
+  * No change version bump.
+
+ -- Ondřej Surý <ondrej@debian.org>  Sat, 13 Mar 2021 13:53:51 +0100
+
+php-defaults (81) unstable; urgency=medium
+
+  * php8.0: XMLRPC has been moved from base to PECL
+  * Add phpX.Y-mbstring to php-all-dev dependencies
+  * Add virtual php-gettext package
+
+ -- Ondřej Surý <ondrej@debian.org>  Mon, 22 Feb 2021 11:45:43 +0100
+
+php-defaults (80) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- Ondřej Surý <ondrej@debian.org>  Sat, 20 Feb 2021 07:44:19 +0100
+
+php-defaults (80~exp3) experimental; urgency=medium
+
+  * Add phpX.Y-mbstring to php-all-dev dependencies
+
+ -- Ondřej Surý <ondrej@debian.org>  Fri, 19 Feb 2021 21:13:06 +0100
+
+php-defaults (80~exp2) experimental; urgency=medium
+
+  * Remove dummy dependency packages for XMLRPC
+   + XMLRPC extension has been removed
+
+ -- Ondřej Surý <ondrej@debian.org>  Wed, 13 Jan 2021 09:22:11 +0100
+
+php-defaults (80~exp1) experimental; urgency=medium
+
+  [Ondřej Surý]
+  * Start the transition to PHP 8.0
+
+  [Bryce Harrington]
+  * d/control.in: Make php packages cross-installable to i386.
+    - Drop sed dependency for php-common.  sed is an Essential
+      package, and the versioned dependency (>= 4.1.1-1) is obsolete.
+    - Make php-common "Multi-Arch: foreign" to indicate it has no
+      dependencies on architecture-dependent packages.
+
+ -- Ondřej Surý <ondrej@debian.org>  Thu, 10 Dec 2020 18:13:52 +0100
+
+php-defaults (79) unstable; urgency=medium
+
+  * Add xml extension to php-all-dev
+
+ -- Ondřej Surý <ondrej@debian.org>  Sun, 11 Oct 2020 20:02:55 +0200
+
+php-defaults (78) unstable; urgency=medium
+
+  * Update d/gbp.conf for main branch
+  * Add PHP 8.0 to supported versions to initiate soft transition
+
+ -- Ondřej Surý <ondrej@debian.org>  Sat, 10 Oct 2020 12:54:06 +0200
+
+php-defaults (77) unstable; urgency=medium
+
+  * Convert to debhelper 10
+
+ -- Ondřej Surý <ondrej@debian.org>  Mon, 21 Sep 2020 15:10:10 +0200
 
 php-defaults (76) unstable; urgency=medium
 
